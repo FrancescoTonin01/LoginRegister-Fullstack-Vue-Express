@@ -1,40 +1,87 @@
 package it.unife.ingsw202324.MicroservizioBase.models;
 
+import java.time.LocalDate;
+
 public class UserUpdateRequest {
     private String username;
-    private String password;
-    private String oldUsername;
+    private String email;
+    private String currentPassword;
+    private String newPassword;
+    private LocalDate birthdate;
+    private String gender;
 
-    // Default constructor
+    // Costruttore vuoto
     public UserUpdateRequest() {}
 
-    // Getter for username
+    // Costruttore con tutti i campi
+    public UserUpdateRequest(String username, String email, String currentPassword, String newPassword, LocalDate birthdate, String gender) {
+        this.username = username;
+        this.email = email;
+        this.currentPassword = currentPassword;
+        this.newPassword = newPassword;
+        this.birthdate = birthdate;
+        this.gender = gender;
+    }
+
+    // Getter e Setter
     public String getUsername() {
         return username;
     }
 
-    // Setter for username
     public void setUsername(String username) {
         this.username = username;
     }
 
-    // Getter for password
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    // Setter for password
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    // Getter for oldUsername
-    public String getOldUsername() {
-        return oldUsername;
+    public String getCurrentPassword() {
+        return currentPassword;
     }
 
-    // Setter for oldUsername
-    public void setOldUsername(String oldUsername) {
-        this.oldUsername = oldUsername;
+    public void setCurrentPassword(String currentPassword) {
+        this.currentPassword = currentPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(LocalDate birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    // toString method for debugging
+    @Override
+    public String toString() {
+        return "UserUpdateRequest{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", currentPassword='[PROTECTED]'" +
+                ", newPassword='[PROTECTED]'" +
+                ", birthdate=" + birthdate +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
